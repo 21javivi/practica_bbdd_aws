@@ -7,6 +7,7 @@ dni VARCHAR(9) NOT NULL,
 nombre VARCHAR(20) NOT NULL,
 apellidos VARCHAR(50) NOT NULL,
 fechaNacimiento DATE,
+genero ENUM('M','H'),
 PRIMARY KEY(dni)
 );
 
@@ -23,5 +24,6 @@ CREATE TABLE IF NOT EXISTS total(
 dni VARCHAR(9) NOT NULL,
 fechaComida DATE NOT NULL,
 caloriasTotales INT(5),
+mensaje VARCHAR(100),
 FOREIGN KEY (dni) REFERENCES usuario(dni)
 );
