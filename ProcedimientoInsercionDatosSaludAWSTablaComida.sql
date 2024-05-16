@@ -1,5 +1,4 @@
 CREATE DEFINER=`admin`@`%` PROCEDURE `insercionComida`(IN dniPersona VARCHAR(9), IN nombrePlato VARCHAR(15),IN fechaDeComida DATE, IN hora TIME, IN caloriasComida INT(5), OUT respuesta VARCHAR(30))
-    COMMENT 'mysql> SET @respuesta=''; mysql> CALL insercionComida(''00000000A'',''PanTumaca'',''2024-05-15'',''07:30'',339,@resultado);'
 BEGIN
     DECLARE momento VARCHAR(30);
     CASE 
