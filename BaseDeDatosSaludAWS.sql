@@ -12,18 +12,20 @@ PRIMARY KEY(dni)
 );
 
 CREATE TABLE IF NOT EXISTS comida(
-dni VARCHAR(9) NOT NULL,
-plato VARCHAR(15) NOT NULL,
-fechaComida DATE NOT NULL,
-tipo VARCHAR(15) NOT NULL,
-calorias INT(4),
-FOREIGN KEY (dni) REFERENCES usuario(dni)
+    dni VARCHAR(9) NOT NULL,
+    plato VARCHAR(15) NOT NULL,
+    fechaComida DATE NOT NULL,
+    tipo VARCHAR(15) NOT NULL,
+    calorias INT(4),
+    PRIMARY KEY(dni, fechaComida, tipo),
+    FOREIGN KEY (dni) REFERENCES usuario(dni)
 );
+
 
 CREATE TABLE IF NOT EXISTS total(
 dni VARCHAR(9) NOT NULL,
 fechaComida DATE NOT NULL,
 caloriasTotales INT(5),
-mensaje VARCHAR(100),
+mensaje VARCHAR(40),
 FOREIGN KEY (dni) REFERENCES usuario(dni)
 );
